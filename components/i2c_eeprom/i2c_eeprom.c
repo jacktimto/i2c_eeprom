@@ -69,7 +69,7 @@ esp_err_t i2c_eeprom_write(i2c_eeprom_handle_t eeprom_handle, uint32_t address, 
     // memcpy(eeprom_handle->buffer + eeprom_handle->addr_wordlen, data, size);//地址偏移
     if((address%16)!=0)
     {
-        ESP_LOGE("address","address ")
+        ESP_LOGE("address","address Cannot be divisible by 16");//判断地址是否能被16整除
     }
     eeprom_handle->buffer[0] = (address & 0x00FF);
     memcpy(eeprom_handle->buffer + 1, data, size); // 地址偏移
