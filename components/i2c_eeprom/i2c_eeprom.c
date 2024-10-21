@@ -67,6 +67,10 @@ esp_err_t i2c_eeprom_write(i2c_eeprom_handle_t eeprom_handle, uint32_t address, 
     //     eeprom_handle->buffer[i] = (address & (0xff << ((eeprom_handle->addr_wordlen - 1 - i) * 8))) >> ((eeprom_handle->addr_wordlen - 1 - i) * 8);
     // }
     // memcpy(eeprom_handle->buffer + eeprom_handle->addr_wordlen, data, size);//地址偏移
+    if((address%16)!=0)
+    {
+        ESP_LOGE("address","address ")
+    }
     eeprom_handle->buffer[0] = (address & 0x00FF);
     memcpy(eeprom_handle->buffer + 1, data, size); // 地址偏移
     return i2c_master_transmit(eeprom_handle->i2c_dev, eeprom_handle->buffer, size + 1, -1);
