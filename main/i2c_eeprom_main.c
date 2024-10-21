@@ -46,7 +46,7 @@ void app_main(void)
 
     ESP_ERROR_CHECK(i2c_new_master_bus(&i2c_bus_config, &bus_handle));
 
-    uint32_t block_addr = 0x0011; // block_addr:写入到eeprom的首地址,这个地址必需是能被16整除
+    uint32_t block_addr = 0x0010; // block_addr:写入到eeprom的首地址,这个地址必需是能被16整除
 
     i2c_eeprom_config_t eeprom_config = {
         .eeprom_device.scl_speed_hz = MASTER_FREQUENCY, // 400KHz
