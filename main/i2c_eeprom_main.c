@@ -23,7 +23,7 @@ static void disp_buf(uint8_t *buf, int len) // 把每一页内容打印出来
     int i;
     for (i = 0; i < len; i++)
     {
-        printf("%02x ", buf[i]);
+        printf("0x%02X ", buf[i]);
         if ((i + 1) % 16 == 0)
         {
             printf("\n");
