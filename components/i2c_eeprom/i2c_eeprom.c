@@ -61,7 +61,7 @@ err:
 // eeprom写入
 esp_err_t i2c_eeprom_write(i2c_eeprom_handle_t eeprom_handle, uint32_t address, const uint8_t *data, uint32_t size)
 {
-    ESP_RETURN_ON_FALSE(eeprom_handle, ESP_ERR_NO_MEM, TAG, "no mem for buffer");
+    ESP_RETURN_ON_FALSE(eeprom_handle, ESP_ERR_NO_MEM, TAG, "no mem for buffer");//错误检查
     // for (int i = 0; i < eeprom_handle->addr_wordlen; i++) {
     //     //把address的高字节赋值给buffer[0],把address的低字节赋值给buffer[1]
     //     eeprom_handle->buffer[i] = (address & (0xff << ((eeprom_handle->addr_wordlen - 1 - i) * 8))) >> ((eeprom_handle->addr_wordlen - 1 - i) * 8);
