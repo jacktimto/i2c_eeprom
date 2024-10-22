@@ -13,7 +13,7 @@ extern "C" {
 
 typedef struct {
     i2c_device_config_t eeprom_device;  /*!< Configuration for eeprom device */
-    uint8_t addr_wordlen;               /*!< block address wordlen */
+    uint8_t addr_wordlen;               /*!< block address wordlen,寄存器地址*/
     uint8_t write_time_ms;              /*!< eeprom write time, typically 10ms*/
 } i2c_eeprom_config_t;
 
@@ -27,7 +27,7 @@ struct i2c_eeprom_t {
 typedef struct i2c_eeprom_t i2c_eeprom_t;
 
 /* handle of EEPROM device */
-typedef struct i2c_eeprom_t *i2c_eeprom_handle_t;
+typedef struct i2c_eeprom_t *i2c_eeprom_handle_t;//定义结构体指针
 
 /**
  * @brief Init an EEPROM device.
